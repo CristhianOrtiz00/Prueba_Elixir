@@ -1,4 +1,4 @@
 # Practica de Elixir
 ```
-Terminado modulo 1
+Terminado modulo 1 (revisión)
 ```
