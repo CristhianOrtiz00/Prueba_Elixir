@@ -59,13 +59,13 @@ aislados. Si queremos que el fallo en un proceso se propague a otro, debemos enl
 hacer con spawn_link/1
 """
 """
-iex> self()         #=> PID<0.41.0>
+self()         #=> PID<0.41.0>
 spawn_link(fn -> raise "oops" end) #=> (RuntimeError) oops
 #** (EXIT from #PID<0.41.0>) evaluator process exited with reason: an exception was raised:
 """
 
 # ---------------- Tasks -----------------------------------------------------------------------------
-Task.start(fn -> raise "oops" end) #=> (RuntimeError) oops
+#Task.start(fn -> raise "oops" end) #=> (RuntimeError) oops
 """
 En lugar de spawn/1 y spawn_link/1, utilizamos Task.start/1 y Task.start_link/1 que devuelven {:ok, pid}
 en lugar de sólo el PID. Esto es lo que permite utilizar las tareas en los árboles de supervisión. Además,
@@ -73,3 +73,4 @@ Task proporciona funciones de conveniencia, como Task.async/1 y Task.await/1, y 
 """
 
 # ------------------ State ---------------------------------------------------------------------------
+# El ejemplo de este tipo de estado se hace en el archivo kv.exs
