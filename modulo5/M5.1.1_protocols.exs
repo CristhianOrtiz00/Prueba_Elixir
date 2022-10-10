@@ -143,3 +143,8 @@ tuple = {1, 2, 3}
 
 # Note: El protocolo Inspect es el protocolo utilizado para transformar cualquier
 # estructura de datos en una representación textual legible.
+
+{1, 2, 3}
+%User{}
+%User{name: "john", age: 27}
+inspect &(&1+2)             #//"#Function<6.71889879/1 in :erl_eval.expr/5>"

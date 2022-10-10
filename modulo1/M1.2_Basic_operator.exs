@@ -21,13 +21,13 @@ false or is_atom(:example)	#//true
 # 1 and true 			#//(BadBooleanError) expected a boolean on left-side of "and", got: 1
 
 # ||, &&, ! -> can be used with any type of data
-1 || true				#//1
+1 || true				  #//1
 false || 11 			#//11
 nil && 13 				#//nil
 true && 17 				#//17
-!true 					#//false
-!1 						#//false
-!nil 					#//true
+!true 					  #//false
+!1 						    #//false
+!nil 					    #//true
 
 # ==, !=, ===, !==, <=, >=, <, > -> comparative operators
 IO.puts 1 == 1.0				#//true

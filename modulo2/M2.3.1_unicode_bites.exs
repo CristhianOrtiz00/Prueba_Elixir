@@ -1,12 +1,12 @@
 # Unicode -> facilita la comunicación a través de múltiples idiomas.
-# EL estandar unicode actúa como un registro de practicamente todos los caracteres 
-# que se conocen: sto incluye caracteres de textos clásicos, emojis y caracteres de formato y control
+# EL estandar unicode actúa como un registro de practicamente todos los caracteres
+# que se conocen: esto incluye caracteres de textos clásicos, emojis y caracteres de formato y control
 
 #Code Point -> valor único numérico
-IO.puts ?a			#//97
+IO.puts ?a			#//97 //? con este simbolo se obtiene el valor númerico de ese caracter
 IO.puts ?ł			#//322
 
-# La mayoría de los gráficos de código Unicode se referirán a un punto de código por 
+# La mayoría de los gráficos de código Unicode se referirán a un punto de código por
 # su representación hexadecimal (hexadecimal). Ejemplo 97 se traduce a 0061 en hexadecimal
 # podemos representar cualquier caracter unicode en una cadena Elixir así \uXXXX donde las
 # X son el número hexadecimal
@@ -14,16 +14,16 @@ IO.puts ?ł			#//322
 "\u0061" == "a"		#//true
 0x0061 = 97 = ?a	#//97
 
-String.codepoints("👩‍🚒")				#//["👩", "‍", "🚒"]
+String.codepoints("👩‍🚒")				  #//["👩", "‍", "🚒"]
 IO.puts String.graphemes("👩‍🚒")		#//["👩‍🚒"]
-String.length("👩‍🚒")					#//1
+String.length("👩‍🚒")					    #//1
 
-# Para ver los bytes exactos de una cadena almacenada se puede hacer concatenando 
+# Para ver los bytes exactos de una cadena almacenada se puede hacer concatenando
 # el byte nulo <<0>> o con IO.inspect/2
 "hełło" <> <<0>>
 IO.inspect("hełło", binaries: :as_binaries)
 
-# ------ Cadenas de bites -> Una cadena de bits está hecha de muchos segmentos y 
+# ------ Cadenas de bites -> Una cadena de bits está hecha de muchos segmentos y
 # cada segmento tiene un tipo. Hay 9 tipos utilizados en las cadenas de bits:
 # integer, float, bits ó bitstring, binary ó bytes, utf8, utf16, utf32
 
@@ -35,7 +35,7 @@ IO.inspect("hełło", binaries: :as_binaries)
 rest = "oo"
 <<102, rest::binary>>	#//"foo"
 
-# Los tipos utf8, utf16 y utf32 son para puntos de código Unicode. También pueden 
+# Los tipos utf8, utf16 y utf32 son para puntos de código Unicode. También pueden
 # aplicarse a cadenas literales y listas de caracteres:
 <<"foo"::utf16>>		#//<<0, 102, 0, 111, 0, 111>>
 <<"foo"::utf32>>		#//<<0, 0, 0, 102, 0, 0, 0, 111, 0, 0, 0, 111>>
@@ -56,4 +56,3 @@ rest = "oo"
 # Aquí, 257 en base 2 se representaría como 100000001, pero como hemos reservado sólo
 # 8 bits para su representación (por defecto), el bit más a la izquierda se ignora y
 # el valor se trunca a 00000001, o simplemente 1 en decimal.
-

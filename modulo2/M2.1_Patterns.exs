@@ -1,4 +1,4 @@
-#Sirve para emarejar patrones de tuplas y listas
+#Sirve para emparejar patrones de tuplas y listas
 {a, b, c} = {:hello, "world", 42}	#//{:hello, "world", 42}
 
 [d, e, f] = [1, 2, 3]				#//[1, 2, 3]
@@ -15,24 +15,24 @@ IO.puts(f)			#//3
 #{j, k, l} = [:hello, "world", 42]	#//(MatchError) -> Deben ser del mismo tipo
 
 {:ok, result} = {:ok, 13}			#//{:ok, 13} -> Este ejemplo dice que el lado izq solo coincidirá con el der
-									#cuando el lado derecho es una tupla que comienza con :ok
+															#cuando el lado derecho es una tupla que comienza con :ok
 
-[head | tail] = [1, 2, 3]			#//[1, 2, 3] -> La lista admidte la coincidencia en su cabeza y cola
+[head | tail] = [1, 2, 3]			#//[1, 2, 3] -> La lista admite la coincidencia en su cabeza y cola
 
 IO.puts(result)			#//13
-IO.puts(head)			#//1
-IO.puts(tail)			#//[2, 3]
+IO.puts(head)				#//1
+IO.puts(tail)				#//[2, 3]
 
 #[head | tail] = []		#//(MatchError) -> No se puede coincidir una lista vacía con un pattern de cabeza y cola
 
-x = 1					#//1
+x = 1						#//1
 #x = 2					#//2 -> Esto se puede ya que las variables en Elixir pueden ser de rebote
 #^x = 2					#//(MatchError) -> el simbolo pin(^) evita que la variable se enlace con otro valor
 
 [^x, 2, 3] = [1, 2, 3]	#//[1, 2, 3]
-{y, ^x} = {2, 1}		#//{2, 1}
-IO.puts y				#//2
-#{y, ^x} = {2, 2}		#//(MatchError) -> Ya que x esta enlazado a 1
+{y, ^x} = {2, 1}				#//{2, 1}
+IO.puts y								#//2
+#{y, ^x} = {2, 2}				#//(MatchError) -> Ya que x esta enlazado a 1
 
 [head | _] = [33, 2, 3]	#//[1, 2, 3] -> el valor subraya(_) da a entender que no interesa la cola de la lista
 IO.puts head			#//33
