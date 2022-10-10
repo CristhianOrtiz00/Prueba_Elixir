@@ -27,5 +27,7 @@ Esta carpeta contiene los archivos de los temas estudiados en el módulo 4 y alg
 Los temas de este modulo fueron: IO and the file system, alias, require, and import, Module attributes and Structs.
 ```
 ```
-Termine el modulo 3
+## Modulo 5
+Esta carpeta contiene los archivos de los temas estudiados en el módulo 4 y algunos ejemplos de cada tema.
+Los temas de este modulo fueron: protocols, comprehensions, sigils, try, catch, after, rescue and optional syntax sheet
 ```
