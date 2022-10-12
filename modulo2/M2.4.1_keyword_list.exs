@@ -1,5 +1,5 @@
 # ----- Keyword list -> son una estructura de datos utilizada para pasar opciones a
-# las funciones. 
+# las funciones.
 String.split("1 2 3", " ")		#//["1", "2", "3"]
 String.split("1  2  3", " ")	#//["1", "", "2", "", "3"] -> Ya que tiene dos espacios
 String.split("1  2  3", " ", [trim: true])	#//["1", "2", "3"] -> elimina los datos vacios
@@ -22,7 +22,7 @@ IO.puts list[:b]		#//2
 
 # En caso de claves duplicadas, los valores que se añaden al frente son los que se obtienen:
 new_list = [a: 0] ++ list	#//[a: 0, a: 1, b: 2]
-new_list[:a]				#//0
+new_list[:a]				      #//0
 
 # Las Keyword lists son importantes porque tienen tres características
 # especiales:
@@ -35,9 +35,9 @@ new_list[:a]				#//0
 # requiere el número de elementos y su orden para coincidir
 
 [d: d] = [d: 1]
-IO.puts d					#//1
-#[a: a] = [a: 1, b: 2]		#//(MatchError)
-#[b: b, a: a] = [a: 1, b: 2]#//(MatchError)
+IO.puts d					            #//1
+#[a: a] = [a: 1, b: 2]		    #//(MatchError)
+#[b: b, a: a] = [a: 1, b: 2]  #//(MatchError)
 
 # Si necesita almacenar muchos elementos o garantizar la asociación de una clave
 # con un valor como máximo, debería utilizar mapas en su lugar

@@ -40,13 +40,13 @@ is_boolean(:false)	#//true
 is_atom(Hello) 		#//true -> Los alias empiezan con mayusculas y son atom
 
 # ----- strings -> con comillas dobles
-"hello"								#//hello
-string = :world						#//world
-IO.puts "hello #{string}" 			#//hello world -> interpolacion de cadenas
+"hello"												#//hello
+string = :world								#//world
+IO.puts "hello #{string}" 		#//hello world -> interpolacion de cadenas
 IO.puts "hello\nworld"				#//hello
-									#//world
-is_binary("hello")					#//true -> Los string estan representados por secuencias contiguas de bytes
-IO.puts byte_size("hellö")			#//6 -> the chart 'ö' takes 2 bytes to be represented
+															#//world
+is_binary("hello")						#//true -> Los string estan representados por secuencias contiguas de bytes
+IO.puts byte_size("hellö")				#//6 -> the chart 'ö' takes 2 bytes to be represented
 IO.puts String.length("hellö")		#//5
 IO.puts String.upcase("hello")		#//HELLO
 IO.puts String.downcase("HeLLo")	#//hello
@@ -69,8 +69,8 @@ IO.puts length [1, 4, 5] 		#//3
 list3 = [1, 2, 3] ++ [4, 5, 6] 	##//[1, 2, 3, 4, 5, 6] -> concatena las dos listas
 list4 = [1, true, 2, false, 3, true] -- [true, false]	#//[1, 2, 3, true] -> resta las listas
 list5 = [1, 2, 3]
-hd(list5) 						#//-> retorna la cabeza de la lista (primer elemento)
-tl(list5) 						#//-> retorna la cola de la lista
+hd(list5) 						#//-> 1 //retorna la cabeza de la lista (primer elemento)
+tl(list5) 						#//-> [2, 3] //retorna la cola de la lista
 IO.puts [104, 101, 108, 108, 111]	#//'hello' -> Elixir puede tomar la lista de numeros ASCCI imprimibles
 #i 'hello' -> muestra los datos de 'hello'. Las comillas simples son listas de caracteres
 'hello' == "hello" 				#//false
@@ -84,6 +84,6 @@ IO.puts list					#//[1, 2, 3, 4]
 # ----- Tuplas
 {:ok, "hello"}
 IO.puts tuple_size {:ok, "hello"} 	#//2
-tuple = {:ok, "hello"}				#//{:ok, "hello"}
-IO.puts elem(tuple, 1)				#//hello
-put_elem(tuple, 1, "world") 		#//{:ok, "world"}
+tuple = {:ok, "hello"}							#//{:ok, "hello"}
+IO.puts elem(tuple, 1)							#//hello
+put_elem(tuple, 1, "world") 				#//{:ok, "world"}

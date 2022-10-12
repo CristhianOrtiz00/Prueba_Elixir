@@ -1,4 +1,4 @@
-# ------ Maps -> 
+# ------ Maps ->
 map = %{:a => 1, 2 => :b}		#//%{2 => :b, :a => 1}
 IO.puts (map[:a])					#//1
 IO.puts (map[2])					#//b
@@ -17,18 +17,18 @@ IO.puts a							#//1
 # Las variables se pueden utilizar al acceder, hacer coincidir y agregar claves de mapa
 n = 1
 map = %{n => :one}					#//%{1 => :one}
-IO.puts map[n]						#//one
+IO.puts map[n]						  #//one
 %{^n => :one} = %{1 => :one, 2 => :two, 3 => :three}	#//%{1 => :one, 2 => :two, 3 => :three}
 
 # El módulo Map proporciona una API con funciones convenientes para manipular mapas:
 IO.puts Map.get(%{:a => 1, 2 => :b}, :a)	#//1
-Map.put(%{:a => 1, 2 => :b}, :c, 3)			#//%{2 => :b, :a => 1, :c => 3}
-Map.to_list(%{:a => 1, 2 => :b})			#//[{2, :b}, {:a, 1}]
+Map.put(%{:a => 1, 2 => :b}, :c, 3)			  #//%{2 => :b, :a => 1, :c => 3}
+Map.to_list(%{:a => 1, 2 => :b})			    #//[{2, :b}, {:a, 1}]
 
 # Actualizar el valor de una clave
 map = %{:a => 1, 2 => :b}			#//%{2 => :b, :a => 1}
-%{map | 2 => "two"}					#//%{2 => "two", :a => 1}
-#%{map | :c => 3}					#//(KeyError) key :c not found in: %{2 => :b, :a => 1}
+%{map | 2 => "two"}					  #//%{2 => "two", :a => 1}
+#%{map | :c => 3}					    #//(KeyError) key :c not found in: %{2 => :b, :a => 1}
 
 # Cuando todas las claves de un mapa son átomos, puede usar la sintaxis de la palabra clave para mayor comodidad:
 map = %{a: 1, b: 2}
@@ -36,7 +36,7 @@ map = %{a: 1, b: 2}
 # Sintaxis para acceder a las claves atómicas
 map = %{:a => 1, 2 => :b}
 IO.puts map.a						#//1
-#map.c								#//(KeyError)
+#map.c								  #//(KeyError)
 
 # ------ Blocks and keywords
 # las palabras clave se utilizan principalmente en el lenguaje para pasar valores opcionales
@@ -48,7 +48,7 @@ end
 # Sucede que los bloques do no son más que una conveniencia de sintaxis sobre las palabras clave. Podemos reescribir lo anterior
 if true, do: "This will be seen", else: "This won't"
 
-# keywords lists que pueden convertirse en bloques: 
+# keywords lists que pueden convertirse en bloques:
 # do, else, catch, rescue y after. Esas son todas las palabras clave utilizadas por las construcciones
 # de flujo de control de Elixir. Ya hemos aprendido algunas de ellas y aprenderemos otras en el futuro.
 

@@ -7,16 +7,14 @@ case {1, 2, 3} do
 		IO.puts "This clause will match and bind x to 2 in this clause"
 	_ ->
 		IO.puts "This clause would match any value"
-end
-#//"This clause will match and bind x to 2 in this clause"
+end									#//"This clause will match and bind x to 2 in this clause"
 
 # Para hacer coincidir con una variable debe utilizar '^'
 x = 1
 case 10 do
 	^x -> IO.puts "Won't match"
 	_ -> IO.puts "Will match"
-end
-#//"Will match"
+end									#//"Will match"
 
 # Se pueden agregar condiciones(guards) al case
 # Algunos de los guards:
@@ -34,16 +32,14 @@ case {1, 2, 3} do
 		IO.puts "Will match"
 	_ ->
 		IO.puts "Would match, if guard condition were not satisfied"
-end
-#//"Will match"
+end							#//"Will match"
 
 # Los errores en los guards hacen que el guards falle y no se tenga encuenta
 # hd(1)		#//(ArgumentError) argument error
 #case 1 do
 #	x when hd(x) -> "Won't match"
 #	x -> "Got #{x}"
-#end
-#//"Got 1"
+#end											#//"Got 1"
 
 # Si ninguna clusula coincide se produce error
 # case :ok do
