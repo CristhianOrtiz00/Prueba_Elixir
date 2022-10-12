@@ -46,7 +46,7 @@ iex> send(:kv, {:get, :hello, self()})  #=> {:get, :hello, #PID<0.41.0>}
 iex> flush()                            #=> :world
                                         #=> :ok
 """
-# Este uso de procesos para mantener el estado y registro de normbes son muy comunes, sin embargo, casi siempre se
+# Este uso de procesos para mantener el estado y registro de nombes son muy comunes, sin embargo, casi siempre
 # no se implementaran estos patrones manualmente como en el anterior ejemplo, si no que se utilizaran abstraciones
 # de Elixir como por ejemplo los agents:
 """

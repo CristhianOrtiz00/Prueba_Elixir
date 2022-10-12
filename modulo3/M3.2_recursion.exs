@@ -63,4 +63,4 @@ IO.puts Listas.imprimir_lista("", [1, 2, 3])
 # El módulo Enum, ya proporciona muchas comodidades para trabajar con listas.
 # Por ejemplo, los ejemplos anteriores podrían escribirse como:
 Enum.reduce([1, 2, 3], 0, fn(x, acc) -> x + acc end)    #=> 6
-Enum.map([1, 2, 3], fn(x) -> x * 2 end)            #=> [2, 4, 6]
+Enum.map([1, 2, 3], fn(x) -> x * 2 end)                 #=> [2, 4, 6]

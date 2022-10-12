@@ -7,7 +7,7 @@ defmodule Utility do
   # ... other implementations ...
 end
 
-# Here’s how we could write the same Utility.type/1 functionality as a protocol:
+# Así es como podríamos escribir la misma funcionalidad de Utility.type/1 como un protocolo:
 defprotocol Utility do
   @spec type(t) :: String.t()
   def type(value)
@@ -66,7 +66,7 @@ Size.size(%{label: "some label"})   #=> 1
 """
 El poder de la extensibilidad de Elixir viene cuando los protocolos y los structs se utilizan juntos.
 
-os structs son mapas, no comparten implementaciones de protocolo con los mapas. Por ejemplo, losMapSets
+Los structs son mapas, no comparten implementaciones de protocolo con los mapas. Por ejemplo, los MapSets
 (conjuntos basados en mapas) se implementan como structs.
 
 En lugar de compartir la implementación del protocolo con los mapas, los structs requieren su

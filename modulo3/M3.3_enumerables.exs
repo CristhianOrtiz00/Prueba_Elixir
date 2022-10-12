@@ -21,7 +21,7 @@ Enum.filter(1..3, odd?)                   #=> [1, 3]
 # ----- The pipe operator(Operador de tuberría) ----------------------------------------------------------
 1..100_000 |> Enum.map(&(&1 * 3)) |> Enum.filter(odd?) |> Enum.sum()  #=> 7500000000
 # El símbolo |> es el operador de tubería: toma la salida de la expresión izquierda y la pasa como primer
-# argumento a lafunción dela derecha
+# argumento a la función de la derecha
 """
 Empezamos con un rango y luego multiplicamos cada elemento del rango por 3. Esta primera operación creará
 y devolverá una lista con 100_000 elementos. A continuación, mantenemos todos los elementos impares de la
@@ -31,7 +31,8 @@ lista, generando una nueva lista, ahora con 50_000 elementos, y luego sumamos to
 Enum.sum(Enum.filter(Enum.map(1..100_000, &(&1 * 3)), odd?))          #=> 7500000000
 
 # ------- Streams -----------------------------------------------------------------------------------------
-# As an alternative to Enum, Elixir proporciona el módulo Stream que soporta operaciones lazy
+# As an alternative to Enum, Elixir proporciona el módulo Stream que soporta operaciones lazy. Lo que significa
+# que realiza solo lo que es necesario.
 1..100_000 |> Stream.map(&(&1 * 3)) |> Stream.filter(odd?) |> Enum.sum#=> 7500000000
 """
 En lugar de generar listas intermedias, los flujos construyen una serie de cálculos que se invocan sólo
